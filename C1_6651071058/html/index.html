@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="quqi koffie - thực đơn cà phê, trà và bánh ngọt thủ công.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Fredoka:wght@400;500;600;700&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">    <title>quqi koffie | Coffee & Bakery</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="pink-sparkle pink-sparkle-1">✦</div><div class="pink-sparkle pink-sparkle-2">♡</div><div class="pink-sparkle pink-sparkle-3">✿</div>
+    <header class="site-header" id="trang-chu">
+        <div class="header-overlay">
+            <div class="brand">
+                <img src="../images/logo.svg" alt="Logo quqi koffie" class="logo">
+                <div>
+                    <h1>quqi koffie</h1>
+                    <p class="slogan">“Tận hưởng từng phút giây lắng đọng cùng tách cà phê đậm đà”</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="character-strip" aria-label="Chào mừng đến quqi koffie">
+        <div class="character-strip-inner">
+            <span class="sticker sticker-left">♡</span>
+            <p>୨୧ Welcome to our lovely café ୨୧</p>
+            <span class="sticker sticker-right">♡</span>
+        </div>
+    </div>
+
+    <nav class="main-nav" aria-label="Điều hướng chính">
+        <ul>
+            <li><a href="#trang-chu">Trang chủ</a></li>
+            <li><a href="#thuc-don">Thực đơn</a></li>
+            <li><a href="#khuyen-mai">Khuyến mãi</a></li>
+            <li><a href="#lien-he">Liên hệ</a></li>
+        </ul>
+    </nav>
+
+    <main class="page-wrap">
+        <div class="content">
+            <div class="menu-heading"><span class="bow-decoration" aria-hidden="true">🎀</span>
+                <p class="eyebrow">THỰC ĐƠN CỦA CHÚNG TÔI</p>
+                <h2 id="thuc-don">Khám Phá Hương Vị</h2>
+                <div class="menu-tools">
+                    <div class="search-box"><span>⌕</span><input id="menuSearch" type="search" placeholder="Tìm món bạn thích..." aria-label="Tìm món"></div>
+                    <div class="filter-tabs" aria-label="Bộ lọc thực đơn">
+                        <button class="active" data-filter="all">Tất cả món</button>
+                        <button data-filter="coffee">☕ Cà phê</button>
+                        <button data-filter="tea">🍵 Trà</button>
+                        <button data-filter="cake">🍰 Bánh</button>
+                        <button data-filter="special">✨ Món đặc biệt</button>
+                    </div>
+                </div>
+            </div>
+
+            <section class="menu-section" id="ca-phe">
+                <h2>Cà Phê Truyền Thống &amp; Pha Máy</h2>
+                <div class="menu-grid">
+                    <article class="food-card" data-category="coffee special" data-name="cà phê muối cozy">
+                        <img src="../images/coffee-muoi.svg" alt="Cà phê muối Cozy">
+                        <div class="card-body">
+                            <h3>Cà Phê Muối Cozy</h3>
+                            <p>Vị cà phê đậm đà hòa quyện lớp kem muối mịn, béo nhẹ.</p>
+                            <div class="card-bottom"><span class="price">30.000đ</span><button type="button">Đặt món</button></div>
+                        </div>
+                    </article>
+                    <article class="food-card" data-category="coffee" data-name="bạc xỉu espresso">
+                        <img src="../images/espresso.svg" alt="Bạc xỉu Espresso">
+                        <div class="card-body">
+                            <h3>Bạc Xỉu Espresso</h3>
+                            <p>Espresso thơm đậm kết hợp sữa tươi, vị ngọt dịu dễ uống.</p>
+                            <div class="card-bottom"><span class="price">35.000đ</span><button type="button">Đặt món</button></div>
+                        </div>
+                    </article>
+                    <article class="food-card" data-category="coffee" data-name="latte hạt dẻ nóng">
+                        <img src="../images/latte.svg" alt="Latte hạt dẻ nóng">
+                        <div class="card-body">
+                            <h3>Latte Hạt Dẻ Nóng</h3>
+                            <p>Latte mềm mượt cùng hương hạt dẻ ấm áp, thơm dịu.</p>
+                            <div class="card-bottom"><span class="price">45.000đ</span><button type="button">Đặt món</button></div>
+                        </div>
+                    </article>
+                    <article class="food-card" data-category="coffee special" data-name="cold brew cam sả">
+                        <img src="../images/cold-brew.svg" alt="Cold Brew Cam Sả">
+                        <div class="card-body">
+                            <h3>Cold Brew Cam Sả</h3>
+                            <p>Cà phê ủ lạnh thanh mát, điểm cam và sả cho hậu vị tươi.</p>
+                            <div class="card-bottom"><span class="price">48.000đ</span><button type="button">Đặt món</button></div>
+                        </div>
+                    </article>
+                    <article class="food-card" data-category="coffee special" data-name="cà phê trứng đen">
+                        <img src="../images/trung-den.svg" alt="Cà phê trứng đen">
+                        <div class="card-body">
+                            <h3>Cà Phê Trứng Đen</h3>
+                            <p>Lớp kem trứng bông mịn trên nền cà phê đậm đà đặc trưng.</p>
+                            <div class="card-bottom"><span class="price">42.000đ</span><button type="button">Đặt món</button></div>
+                        </div>
+                    </article>
+                    <article class="food-card" data-category="coffee" data-name="americano mộc">
+                        <img src="../images/americano.svg" alt="Americano nóng">
+                        <div class="card-body">
+                            <h3>Americano Mộc</h3>
+                            <p>Espresso pha loãng với nước nóng, hậu vị sạch và thanh.</p>
+                            <div class="card-bottom"><span class="price">32.000đ</span><button type="button">Đặt món</button></div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="menu-section" id="tra">
+                <h2>Trà Tươi &amp; Macchiato Thanh Nhã</h2>
+                <div class="menu-grid">
+                    <article class="food-card" data-category="tea special" data-name="trà ô long dâu tằm">
+                        <img src="../images/tra-olong.svg" alt="Trà ô long dâu tằm">
+                        <div class="card-body">
+                            <h3>Trà Ô Long Dâu Tằm</h3>
+                            <p>Ô long thơm nhẹ hòa cùng vị dâu tằm chua ngọt tự nhiên.</p>
+                            <div class="card-bottom"><span class="price">42.000đ</span><button type="button">Đặt món</button></div>
+                        </div>
+                    </article>
+                    <article class="food-card" data-category="tea" data-name="trà sen macchiato">
+                        <img src="../images/tra-sen.svg" alt="Trà sen macchiato">
+                        <div class="card-body">
+                            <h3>Trà Sen Macchiato</h3>
+                            <p>Trà sen thanh mát phủ lớp macchiato béo nhẹ, cân bằng vị.</p>
+                            <div class="card-bottom"><span class="price">45.000đ</span><button type="button">Đặt món</button></div>
+                        </div>
+                    </article>
+                    <article class="food-card" data-category="tea" data-name="trà đào cam sả">
+                        <img src="../images/tra-dao.svg" alt="Trà đào cam sả">
+                        <div class="card-body">
+                            <h3>Trà Đào Cam Sả</h3>
+                            <p>Đào ngọt thơm kết hợp cam tươi và sả, uống rất sảng khoái.</p>
+                            <div class="card-bottom"><span class="price">38.000đ</span><button type="button">Đặt món</button></div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="menu-section" id="banh">
+                <h2>Bánh Ngọt &amp; Tráng Miệng Thủ Công</h2>
+                <div class="menu-grid">
+                    <article class="food-card" data-category="cake special" data-name="bánh kem dâu">
+                        <img src="../images/cream-cake.svg" alt="Tiramisu cacao">
+                        <div class="card-body">
+                            <h3>Bánh Kem Dâu</h3>
+                            <p>Bánh kem mềm mịn, phủ kem tươi và dâu ngọt xinh.</p>
+                            <div class="card-bottom"><span class="price">40.000đ</span><button type="button">Đặt món</button></div>
+                        </div>
+                    </article>
+                    <article class="food-card" data-category="cake" data-name="bánh dâu tươi">
+                        <img src="../images/strawberry-cake.svg" alt="Croissant bơ tươi">
+                        <div class="card-body">
+                            <h3>Bánh Dâu Tươi</h3>
+                            <p>Cốt bánh mềm, kem tươi mịn và dâu tươi chua ngọt.</p>
+                            <div class="card-bottom"><span class="price">32.000đ</span><button type="button">Đặt món</button></div>
+                        </div>
+                    </article>
+                    <article class="food-card" data-category="cake special" data-name="chocomint kem bạc hà">
+                        <img src="../images/chocomint-cake.svg" alt="Cheesecake chanh dây">
+                        <div class="card-body">
+                            <h3>Chocomint Kem Bạc Hà</h3>
+                            <p>Socola đậm vị kết hợp kem bạc hà mát lạnh, ngọt dịu.</p>
+                            <div class="card-bottom"><span class="price">45.000đ</span><button type="button">Đặt món</button></div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+
+
+            <section class="menu-section" id="mon-dac-biet">
+                <div class="section-heading-row"><h2>✨ Món Đặc Biệt &amp; Topping</h2><span class="section-note">Những món xinh xinh dành cho team thích thử vị mới ♡</span></div>
+                <div class="menu-grid">
+                    <article class="food-card" data-category="special" data-name="matcha dâu kem mây"><div class="cute-illustration"><span>🍓</span><b>🍵</b><i>☁️</i></div><div class="card-body"><h3>Matcha Dâu Kem Mây</h3><p>Matcha xanh dịu, dâu tươi và lớp kem mây bồng bềnh.</p><div class="card-bottom"><span class="price">49.000đ</span><button type="button">Đặt món</button></div></div></article>
+                    <article class="food-card" data-category="special" data-name="soda dâu hoa hồng"><div class="cute-illustration"><span>🌹</span><b>🥤</b><i>🫧</i></div><div class="card-body"><h3>Soda Dâu Hoa Hồng</h3><p>Soda lấp lánh vị dâu, thơm nhẹ hoa hồng và siro ngọt.</p><div class="card-bottom"><span class="price">39.000đ</span><button type="button">Đặt món</button></div></div></article>
+                    <article class="food-card" data-category="special" data-name="tiramisu dâu"><div class="cute-illustration"><span>🍓</span><b>🍰</b><i>✦</i></div><div class="card-body"><h3>Tiramisu Dâu</h3><p>Mascarpone mềm mịn, cacao thơm và dâu tươi ngọt nhẹ.</p><div class="card-bottom"><span class="price">48.000đ</span><button type="button">Đặt món</button></div></div></article>
+                    <article class="food-card" data-category="cake special" data-name="bánh chocomint"><div class="cute-illustration"><span>🍫</span><b>🍰</b><i>🌿</i></div><div class="card-body"><h3>Bánh Chocomint</h3><p>Cốt chocolate ẩm mềm, kem bạc hà mát và vụn chocolate.</p><div class="card-bottom"><span class="price">46.000đ</span><button type="button">Đặt món</button></div></div></article>
+                    <article class="food-card" data-category="special" data-name="matcha kem dâu"><div class="cute-illustration"><span>🍵</span><b>🍓</b><i>♡</i></div><div class="card-body"><h3>Matcha Kem Dâu</h3><p>Matcha thơm nhẹ phủ kem dâu mịn, ngọt vừa và béo dịu.</p><div class="card-bottom"><span class="price">47.000đ</span><button type="button">Đặt món</button></div></div></article>
+                    <article class="food-card" data-category="special" data-name="pudding trứng mật ong"><div class="cute-illustration"><span>🍮</span><b>✨</b><i>♡</i></div><div class="card-body"><h3>Pudding Trứng Mật Ong</h3><p>Pudding mềm mượt, thơm trứng và thêm chút mật ong dịu ngọt.</p><div class="card-bottom"><span class="price">35.000đ</span><button type="button">Đặt món</button></div></div></article>
+                    <article class="food-card" data-category="special" data-name="trân châu đường đen"><div class="cute-illustration"><span>🧋</span><b>🖤</b><i>✦</i></div><div class="card-body"><h3>Trân Châu Đường Đen</h3><p>Trân châu dẻo thơm với đường đen caramel, thêm vào món tùy thích.</p><div class="card-bottom"><span class="price">10.000đ</span><button type="button">Thêm topping</button></div></div></article>
+                    <article class="food-card" data-category="special" data-name="kem cheese bông mịn"><div class="cute-illustration"><span>🧀</span><b>☁️</b><i>♡</i></div><div class="card-body"><h3>Kem Cheese Bông Mịn</h3><p>Lớp kem cheese béo nhẹ, mịn xốp, hợp với trà và cà phê.</p><div class="card-bottom"><span class="price">12.000đ</span><button type="button">Thêm topping</button></div></div></article>
+                </div>
+            </section>
+
+        <aside class="sidebar" id="khuyen-mai">
+            <div class="promo-box"><span class="promo-bow" aria-hidden="true">🎀</span>
+                <p class="promo-title">✦ WEEKLY SPECIALS ✦</p>
+                <h2>Món Hot Trong Tuần</h2>
+                <p class="promo-subtitle">Được yêu thích nhất trong tuần</p>
+
+                <div class="mini-item">
+                    <img src="../images/coffee-muoi.svg" alt="">
+                    <div><strong>Cà Phê Muối Cozy</strong><small>30.000đ</small></div>
+                    <span>●</span>
+                </div>
+                <div class="mini-item">
+                    <img src="../images/cream-cake.svg" alt="">
+                    <div><strong>Bánh Kem Dâu</strong><small>40.000đ</small></div>
+                    <span>●</span>
+                </div>
+                <div class="mini-item">
+                    <img src="../images/tra-sen.svg" alt="">
+                    <div><strong>Trà Sen Macchiato</strong><small>45.000đ</small></div>
+                    <span>●</span>
+                </div>
+
+                <div class="deal">
+                    <strong>ƯU ĐÃI ĐẶC BIỆT</strong>
+                    <p>Giảm 15% cho hóa đơn từ 150.000đ vào Thứ 3 &amp; Thứ 5.</p>
+                    <a href="#lien-he">Xem chi tiết</a>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <div class="cart-float" id="cartFloat" aria-live="polite">🛍️ <span>Giỏ món</span> <b id="cartCount">0</b></div>
+    <div class="toast" id="toast">♡ Đã thêm vào giỏ món!</div>
+
+    <footer id="lien-he">
+        <div class="footer-grid">
+            <section>
+                <h2>◷ GIỜ MỞ CỬA</h2>
+                <p><b>Thứ 2 - Thứ 8:</b> 07:00 - 22:30</p>
+                <p><b>Thứ 7 - Chủ nhật:</b> 07:00 - 23:00</p>
+                <small>* Nhận order cuối cùng trước giờ đóng cửa 30 phút.</small>
+            </section>
+            <section>
+                <h2>⌖ THÔNG TIN LIÊN HỆ</h2>
+                <p>124 Đường Nguyễn Trãi, Phường Bến Thành, Quận 1, TP. Hồ Chí Minh</p>
+                <p>☎ Hotline: 098 765 4321</p>
+                <p>✉ Email: hello@quqikoffie.example</p>
+            </section>
+            <section>
+                <h2>‹ KẾT NỐI VỚI CHÚNG TÔI</h2>
+                <p>Theo dõi quqi koffie trên mạng xã hội để cập nhật menu mới và ưu đãi đặc biệt.</p>
+                <div class="socials"><a href="#">f</a><a href="#">◎</a><a href="#">♪</a><a href="#">Zalo</a></div>
+            </section>
+        </div>
+        <p class="footer-cute">♡ Thank you for spending a sweet moment with us ♡</p>
+        <div class="copyright">Copyright © 2026 quqi koffie. All rights reserved.</div>
+    </footer>
+
+<script>
+(() => {
+  const cards=[...document.querySelectorAll('.food-card')], search=document.getElementById('menuSearch');
+  const buttons=[...document.querySelectorAll('.filter-tabs button')]; let active='all', cart=0;
+  function render(){ const q=(search?.value||'').toLowerCase().trim(); cards.forEach(c=>{const ok=(active==='all'||c.dataset.category?.includes(active)) && (!q||c.dataset.name?.includes(q)||c.innerText.toLowerCase().includes(q)); c.classList.toggle('hidden-card',!ok);}); }
+  buttons.forEach(b=>b.addEventListener('click',()=>{buttons.forEach(x=>x.classList.remove('active'));b.classList.add('active');active=b.dataset.filter;render();}));
+  search?.addEventListener('input',render);
+  document.querySelectorAll('.food-card button').forEach(btn=>btn.addEventListener('click',()=>{cart++;document.getElementById('cartCount').textContent=cart;const t=document.getElementById('toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1400);}));
+})();
+</script>
+</body>
+</html>

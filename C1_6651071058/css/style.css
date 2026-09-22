@@ -1,0 +1,949 @@
+/* =========================================================
+   MELODY CAFE — CUTE PINK EDITION
+   Giữ nguyên nội dung menu cũ, thay đổi tone màu + font +
+   trang trí theo hình ảnh My Melody Cafe do người dùng cung cấp.
+   ========================================================= */
+
+/* ---------- SELECTOR + FONT ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Fredoka:wght@400;500;600;700&family=Mali:wght@400;500;600;700&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --pink: #f48fbd;
+    --pink-hot: #ff6fae;
+    --pink-light: #ffd4e7;
+    --pink-dark: #d86e9f;
+    --pink-soft: #ffeaf4;
+    --pink-pale: #fff7fb;
+    --mint: #cdeee9;
+    --blue: #d9e9fa;
+    --lavender: #e5dcf5;
+    --cream: #fffaf7;
+    --brown: #76505d;
+    --brown-dark: #5a3b48;
+    --white: #ffffff;
+    --line: #f1cbdc;
+    --shadow: 0 10px 25px rgba(184, 91, 132, .14);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Nunito", "Baloo 2", "Mali", cursive;
+    color: var(--brown-dark);
+    background:
+        radial-gradient(circle at 12px 12px, rgba(242,155,194,.18) 0 1.5px, transparent 2px) 0 0 / 24px 24px,
+        #fff8fb;
+    line-height: 1.55;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    transition: .25s ease;
+}
+
+/* ---------- HEADER: BACKGROUND + BORDER ---------- */
+.site-header {
+    position: relative;
+    min-height: 340px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    color: #fff;
+    background:
+        linear-gradient(rgba(255, 232, 244, .34), rgba(249, 165, 201, .76)),
+        url("../images/melody-party.jpg") center 43% / cover no-repeat;
+    border-bottom: 5px solid #f7b6d4;
+    box-shadow: 0 7px 22px rgba(215, 104, 153, .18);
+}
+
+/* Lớp mờ nhẹ giúp chữ dễ đọc */
+.site-header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,.12), rgba(247,151,195,.38));
+    pointer-events: none;
+}
+
+/* ---------- ANIMATION: SPARKLES ---------- */
+.header-sparkles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.header-sparkles span {
+    position: absolute;
+    color: #fff;
+    font-size: 1.7rem;
+    text-shadow: 0 2px 7px rgba(200, 90, 140, .3);
+    animation: sparkle 2.8s ease-in-out infinite;
+}
+
+.header-sparkles span:nth-child(1) { left: 8%; top: 22%; }
+.header-sparkles span:nth-child(2) { left: 22%; top: 68%; animation-delay: .7s; }
+.header-sparkles span:nth-child(3) { right: 13%; top: 20%; animation-delay: 1.2s; }
+.header-sparkles span:nth-child(4) { right: 25%; bottom: 17%; animation-delay: 1.8s; }
+.header-sparkles span:nth-child(5) { right: 7%; bottom: 33%; animation-delay: 2.2s; }
+
+@keyframes sparkle {
+    0%, 100% { transform: scale(.8) rotate(-10deg); opacity: .45; }
+    50% { transform: scale(1.25) rotate(10deg); opacity: 1; }
+}
+
+/* ---------- BRAND ---------- */
+.site-header .header-overlay {
+    position: relative;
+    z-index: 2;
+    width: min(1120px, 92%);
+    margin: auto;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    color: #fff;
+    text-align: center;
+}
+
+.logo {
+    width: 145px;
+    padding: 9px;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    background: #ffeaf4;
+    box-shadow: 0 9px 22px rgba(160, 76, 119, .25);
+    transform: rotate(-4deg);
+    transition: transform .3s ease;
+}
+
+.logo:hover {
+    transform: rotate(4deg) scale(1.05);
+}
+
+.brand h1 {
+    font-family: "Comfortaa", "Nunito", cursive;
+    font-size: clamp(2.3rem, 6vw, 4.5rem);
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #fff;
+    text-shadow:
+        0 3px 0 #e788b1,
+        0 6px 15px rgba(147, 69, 105, .22);
+}
+
+.slogan {
+    margin-top: 4px;
+    color: #fff;
+    font-size: 1.08rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(120, 54, 84, .3);
+}
+
+.cute-badge {
+    width: fit-content;
+    margin: 12px auto 0;
+    padding: 5px 14px;
+    border: 2px solid rgba(255,255,255,.85);
+    border-radius: 999px;
+    background: rgba(255,255,255,.25);
+    color: #fff;
+    font-size: .78rem;
+    font-weight: 800;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 5px 15px rgba(147,69,105,.13);
+}
+
+/* ---------- CHARACTER STRIP ---------- */
+.character-strip {
+    padding: 13px 15px;
+    background: linear-gradient(90deg, #ffeaf4, #dff5f1, #f1eafb, #ffeaf4);
+    border-bottom: 1px solid var(--line);
+}
+
+.character-strip-inner {
+    width: min(100%, 1120px);
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    color: var(--pink-dark);
+    font-family: "Comfortaa", "Nunito", cursive;
+    font-weight: 600;
+    text-align: center;
+}
+
+.sticker {
+    display: grid;
+    place-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(200,100,150,.15);
+    animation: tinyFloat 2.5s ease-in-out infinite;
+}
+
+.sticker-right {
+    animation-delay: .8s;
+}
+
+@keyframes tinyFloat {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+}
+
+/* ---------- NAV ---------- */
+.main-nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(255, 247, 251, .96);
+    border-bottom: 2px solid #f3c9dd;
+    box-shadow: 0 4px 15px rgba(183, 91, 133, .08);
+    backdrop-filter: blur(10px);
+}
+
+.main-nav > ul {
+    list-style: none;
+    max-width: 1120px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.main-nav > ul > li {
+    position: relative;
+}
+
+.main-nav a {
+    display: block;
+    color: var(--brown);
+    text-decoration: none;
+    padding: 13px 25px;
+    font-size: .95rem;
+    font-weight: 700;
+    transition: .25s ease;
+}
+
+.main-nav a:hover {
+    color: #fff;
+    background: var(--pink);
+    transform: translateY(-2px);
+}
+
+.main-nav a::before {
+    content: "♡";
+    margin-right: 5px;
+    opacity: 0;
+    transform: scale(0);
+    display: inline-block;
+    transition: .2s ease;
+}
+
+.main-nav a:hover::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ---------- PAGE LAYOUT ---------- */
+.page-wrap {
+    width: min(1120px, 94%);
+    margin: 32px auto 55px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 310px;
+    gap: 28px;
+}
+
+/* ---------- MENU HEADING ---------- */
+.menu-heading {
+    position: relative;
+    margin-bottom: 30px;
+    padding: 25px 25px 22px;
+    border: 2px solid #f5ccdf;
+    border-radius: 24px;
+    background: rgba(255,255,255,.82);
+    box-shadow: var(--shadow);
+}
+
+.bow-decoration {
+    position: absolute;
+    right: 20px;
+    top: 13px;
+    font-size: 2rem;
+    transform: rotate(7deg);
+}
+
+#thuc-don {
+    font-family: "Comfortaa", "Nunito", cursive;
+    font-size: 2.35rem;
+    color: var(--pink-dark);
+    text-shadow: 1px 2px 0 #ffe1ed;
+}
+
+.menu-heading h2::after {
+    content: "♡";
+    display: block;
+    width: auto;
+    height: auto;
+    margin-top: 4px;
+    color: var(--pink);
+    background: none;
+    border-radius: 0;
+}
+
+.eyebrow {
+    color: var(--pink-dark);
+    font-size: .75rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+}
+
+.filter-tabs {
+    position: static;
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap;
+    margin-top: 17px;
+}
+
+.filter-tabs a {
+    color: var(--brown);
+    background: #fff0f7;
+    border: 1px solid #f3cade;
+    border-radius: 999px;
+    padding: 7px 14px;
+    font-size: .75rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.filter-tabs a:first-child,
+.filter-tabs a:hover {
+    background: var(--pink);
+    color: #fff;
+    border-color: var(--pink);
+    transform: translateY(-2px);
+}
+
+/* ---------- SECTION ---------- */
+.menu-section {
+    margin-bottom: 34px;
+}
+
+.menu-section h2 {
+    font-family: "Comfortaa", "Nunito", cursive;
+    font-size: 1.3rem;
+    color: var(--brown-dark);
+    border-bottom: 2px dashed #f0c8db;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+    position: relative;
+}
+
+.menu-section h2::before {
+    content: "🎀";
+    margin-right: 8px;
+    font-size: .95rem;
+}
+
+/* ---------- FOOD CARDS ---------- */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 17px;
+}
+
+.food-card {
+    position: relative;
+    background: rgba(255,255,255,.95);
+    border: 2px solid #f3d2e1;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(183, 91, 133, .10);
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+.food-card::before {
+    content: "♡";
+    position: absolute;
+    z-index: 2;
+    top: 9px;
+    right: 11px;
+    display: grid;
+    place-items: center;
+    width: 29px;
+    height: 29px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.85);
+    color: var(--pink);
+    box-shadow: 0 3px 9px rgba(100,50,70,.10);
+}
+
+.food-card:hover {
+    transform: translateY(-7px) rotate(-.5deg);
+    border-color: #efa6c7;
+    box-shadow: 0 14px 28px rgba(183, 91, 133, .18);
+}
+
+.food-card img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 0 0 16px 16px;
+    background: #fff0f7;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.food-card h3 {
+    font-family: "Comfortaa", "Nunito", cursive;
+    font-size: 1.08rem;
+    margin-bottom: 5px;
+    color: var(--brown-dark);
+}
+
+.food-card p {
+    color: #987684;
+    font-size: .8rem;
+    min-height: 52px;
+}
+
+.card-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.price {
+    color: var(--pink-dark);
+    font-weight: 800;
+}
+
+button {
+    border: 0;
+    border: 2px solid #f6c6dc;
+    border-radius: 999px;
+    background: #fff0f7;
+    color: var(--pink-dark);
+    padding: 7px 13px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: .75rem;
+    font-weight: 800;
+    transition: .25s ease;
+}
+
+button:hover {
+    color: #fff;
+    background: var(--pink);
+    transform: scale(1.05);
+}
+
+/* ---------- SIDEBAR ---------- */
+.sidebar {
+    align-self: start;
+    position: sticky;
+    top: 75px;
+}
+
+.promo-box {
+    position: relative;
+    padding: 23px;
+    border: 3px solid #f2b4d0;
+    border-radius: 28px;
+    background:
+        radial-gradient(circle at 10% 0%, rgba(242,155,194,.22), transparent 35%),
+        linear-gradient(180deg, #fff, #fff5fa);
+    box-shadow: 0 9px 24px rgba(184, 91, 132, .14);
+}
+
+.promo-bow {
+    position: absolute;
+    top: -18px;
+    right: 17px;
+    font-size: 2.2rem;
+    transform: rotate(8deg);
+}
+
+.promo-box h2 {
+    text-align: center;
+    font-family: "Comfortaa", "Nunito", cursive;
+    color: var(--pink-dark);
+    margin-bottom: 2px;
+}
+
+.promo-title {
+    text-align: center;
+    color: var(--pink-dark);
+    font-size: .72rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.promo-subtitle {
+    text-align: center;
+    color: #a17f8d;
+    font-size: .72rem;
+    margin-bottom: 15px;
+}
+
+.mini-item {
+    display: grid;
+    grid-template-columns: 54px 1fr auto;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px dashed #efcddd;
+}
+
+.mini-item img {
+    width: 54px;
+    height: 54px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 2px solid #f4cadc;
+    background: #fff0f7;
+}
+
+.mini-item strong,
+.mini-item small {
+    display: block;
+}
+
+.mini-item strong {
+    font-size: .78rem;
+}
+
+.mini-item small {
+    color: var(--pink-dark);
+    margin-top: 2px;
+}
+
+.deal {
+    margin-top: 18px;
+    padding: 17px;
+    color: #fff;
+    text-align: center;
+    border-radius: 20px;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(255,255,255,.25) 0 2px, transparent 3px),
+        linear-gradient(135deg, #ef92ba, #d86e9f);
+    background-size: 24px 24px, auto;
+    box-shadow: 0 7px 15px rgba(216,110,159,.2);
+}
+
+.deal > strong {
+    color: #fff;
+    font-family: "Comfortaa", "Nunito", cursive;
+}
+
+.deal strong + p {
+    margin-top: 6px;
+    font-size: .75rem;
+}
+
+.deal a {
+    color: #fff;
+    font-size: .72rem;
+    font-weight: 800;
+}
+
+.deal a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+    position: relative;
+    overflow: hidden;
+    color: #805768;
+    padding: 45px max(3%, calc((100% - 1120px) / 2)) 18px;
+    background:
+        radial-gradient(circle at 12% 20%, rgba(242,155,194,.22) 0 3px, transparent 4px),
+        radial-gradient(circle at 80% 70%, rgba(255,255,255,.8) 0 2px, transparent 3px),
+        #ffeef6;
+    background-size: 30px 30px, 25px 25px;
+    border-top: 3px solid #f3bdd6;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr 1fr;
+    gap: 45px;
+}
+
+.footer-grid h2 {
+    color: var(--pink-dark);
+    font-family: "Comfortaa", "Nunito", cursive;
+    font-size: .9rem;
+    margin-bottom: 13px;
+}
+
+.footer-grid p,
+.footer-grid small {
+    font-size: .76rem;
+    color: #947482;
+    margin-bottom: 7px;
+}
+
+.socials {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.socials a {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 2px solid #f0bfd5;
+    color: var(--pink-dark);
+    background: #fff;
+    text-decoration: none;
+    font-size: .72rem;
+    font-weight: 800;
+    transition: .25s ease;
+}
+
+.socials a:hover {
+    background: var(--pink);
+    color: #fff;
+    transform: translateY(-4px) rotate(5deg);
+}
+
+.footer-cute {
+    margin-top: 30px;
+    text-align: center;
+    color: var(--pink-dark) !important;
+    font-family: "Comfortaa", "Nunito", cursive;
+    font-size: .9rem !important;
+}
+
+.copyright {
+    border-top: 1px dashed #efbfd5;
+    margin-top: 18px;
+    padding-top: 16px;
+    text-align: center;
+    font-size: .7rem;
+    color: #b08d9b;
+}
+
+
+/* ---------- EXTRA CUTE ANIMATIONS ---------- */
+.site-header .header-overlay {
+    animation: heroIn .9s cubic-bezier(.2,.8,.2,1) both;
+}
+
+@keyframes heroIn {
+    from { opacity: 0; transform: translateY(22px) scale(.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.site-header {
+    background-size: 105% auto, 105% auto;
+    animation: headerBreath 9s ease-in-out infinite alternate;
+}
+
+@keyframes headerBreath {
+    from { background-position: center 43%; }
+    to { background-position: center 47%; }
+}
+
+.menu-heading,
+.food-card,
+.promo-box,
+.footer-grid section {
+    animation: revealUp .7s ease both;
+}
+
+.food-card:nth-child(2) { animation-delay: .08s; }
+.food-card:nth-child(3) { animation-delay: .16s; }
+.food-card:nth-child(4) { animation-delay: .24s; }
+.food-card:nth-child(5) { animation-delay: .32s; }
+.food-card:nth-child(6) { animation-delay: .40s; }
+
+@keyframes revealUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.food-card img {
+    transition: transform .45s cubic-bezier(.2,.8,.2,1), filter .35s ease;
+}
+
+.food-card:hover img {
+    transform: scale(1.045) rotate(1deg);
+    filter: saturate(1.06);
+}
+
+.food-card::after {
+    content: "✦";
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    color: #f29bc2;
+    opacity: 0;
+    transform: scale(.4) rotate(-25deg);
+    transition: .35s ease;
+    pointer-events: none;
+}
+
+.food-card:hover::after {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+}
+
+.price {
+    animation: pricePop 2.8s ease-in-out infinite;
+}
+
+@keyframes pricePop {
+    0%, 82%, 100% { transform: scale(1); }
+    88% { transform: scale(1.07); }
+    94% { transform: scale(.98); }
+}
+
+.promo-box {
+    animation: floatBox 4.5s ease-in-out infinite;
+}
+
+@keyframes floatBox {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.deal {
+    animation: softPulse 3s ease-in-out infinite;
+}
+
+@keyframes softPulse {
+    0%, 100% { box-shadow: 0 7px 15px rgba(216,110,159,.2); }
+    50% { box-shadow: 0 10px 25px rgba(216,110,159,.34); }
+}
+
+.main-nav a {
+    position: relative;
+}
+
+.main-nav a::after {
+    content: "";
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: 5px;
+    height: 2px;
+    border-radius: 99px;
+    background: var(--pink);
+    transform: scaleX(0);
+    transition: transform .25s ease;
+}
+
+.main-nav a:hover::after {
+    transform: scaleX(1);
+}
+
+.cute-badge {
+    animation: badgeFloat 3s ease-in-out infinite;
+}
+
+@keyframes badgeFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+/* chữ tên quán mềm mại, dễ thương hơn */
+.brand h1 {
+    font-family: "Comfortaa", "Nunito", cursive;
+    letter-spacing: .5px;
+    text-transform: lowercase;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .site-header,
+    .site-header .header-overlay,
+    .promo-box,
+    .deal,
+    .price,
+    .cute-badge {
+        animation: none !important;
+    }
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+    .page-wrap {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        position: static;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 620px) {
+    .site-header {
+        min-height: 410px;
+        background-position: 50% 44%;
+    }
+
+    .brand {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .logo {
+        width: 120px;
+    }
+
+    .brand h1 {
+        font-size: 2.65rem;
+    }
+
+    .main-nav > ul {
+        flex-wrap: wrap;
+    }
+
+    .main-nav a {
+        padding: 10px 12px;
+        font-size: .78rem;
+    }
+
+    .main-nav a::before {
+        display: none;
+    }
+
+    .page-wrap {
+        margin-top: 22px;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-heading {
+        padding: 21px 17px;
+    }
+
+    .character-strip-inner {
+        font-size: .85rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+/* ---------- EXTRA CUTE PINK DECORATIONS ---------- */
+.pink-sparkle{position:fixed;z-index:30;pointer-events:none;color:#ff8fbc;text-shadow:0 2px 8px rgba(255,105,170,.25);font-size:2rem;animation:pinkFloat 3.5s ease-in-out infinite;}
+.pink-sparkle-1{left:2%;top:28%;}.pink-sparkle-2{right:3%;top:45%;animation-delay:1s;}.pink-sparkle-3{left:4%;bottom:12%;animation-delay:1.8s;}
+@keyframes pinkFloat{0%,100%{transform:translateY(0) rotate(-8deg);opacity:.55}50%{transform:translateY(-12px) rotate(10deg);opacity:1}}
+.food-card{border:2px solid #ffd0e2!important;background:linear-gradient(145deg,#fff,#fff6fa)!important;box-shadow:0 12px 28px rgba(235,113,162,.12)!important;}
+.food-card::before{background:linear-gradient(90deg,#ff8fbc,#ffc0d9)!important;}
+.food-card img{background:linear-gradient(145deg,#fff0f7,#ffe1ed)!important;border-radius:20px;}
+.price{color:#e75d9a!important;background:#fff0f7!important;border-color:#ffc1d9!important;}
+
+/* Q U Q I  K O F F I E — extra cute pink details */
+h1, h2, h3, .eyebrow, .price, .main-nav a, .promo-title { font-family: "Fredoka", "Baloo 2", cursive; }
+.food-card img { filter: drop-shadow(0 8px 10px rgba(222, 105, 153, .12)); }
+.food-card:hover img { transform: translateY(-6px) rotate(-1deg) scale(1.035); transition: .35s ease; }
+
+/* ---------- VIETNAMESE-FRIENDLY CUTE TYPOGRAPHY ---------- */
+body { font-family: "Be Vietnam Pro", "Mali", "Baloo 2", sans-serif; }
+.brand h1, #thuc-don, .character-strip-inner, .main-nav a, .menu-section h2, .food-card h3, .promo-box h2, footer h2 { font-family: "Mali", "Be Vietnam Pro", sans-serif; }
+.menu-tools { display:flex; flex-direction:column; gap:14px; margin-top:16px; }
+.search-box { display:flex; align-items:center; gap:8px; padding:10px 15px; background:#fff; border:2px solid #f5c5dc; border-radius:18px; box-shadow:0 6px 16px rgba(184,91,132,.08); }
+.search-box span { font-size:1.35rem; color:#d86e9f; }
+.search-box input { width:100%; border:0; outline:0; background:transparent; font:500 .95rem "Be Vietnam Pro",sans-serif; color:#76505d; }
+.filter-tabs { display:flex; gap:8px; flex-wrap:wrap; }
+.filter-tabs button { border:2px solid #f4c9dd; background:#fff; color:#8a566e; border-radius:999px; padding:9px 14px; font:700 .82rem "Be Vietnam Pro",sans-serif; cursor:pointer; transition:.25s; }
+.filter-tabs button:hover,.filter-tabs button.active { background:#ff8fbd; color:#fff; border-color:#ff8fbd; transform:translateY(-2px); box-shadow:0 6px 14px rgba(255,111,174,.2); }
+.food-card { transition:transform .3s ease, box-shadow .3s ease, opacity .25s; }
+.food-card.hidden-card { display:none; }
+.cute-illustration { height:210px; display:grid; place-items:center; font-size:5rem; background:linear-gradient(145deg,#ffe7f1,#fff7fb,#e5f7f2); border-radius:20px 20px 0 0; position:relative; overflow:hidden; }
+.cute-illustration::after { content:'✦  ♡  ✦'; position:absolute; inset:auto 0 12px; text-align:center; color:#f28ab7; font-size:1.15rem; animation:tinyFloat 2.5s infinite; }
+.cart-float { position:fixed; right:22px; bottom:22px; z-index:50; background:#ff86b7; color:#fff; padding:12px 18px; border-radius:999px; box-shadow:0 10px 25px rgba(190,78,125,.28); font:700 .9rem "Be Vietnam Pro",sans-serif; cursor:pointer; }
+.cart-float b { background:#fff; color:#d86e9f; padding:2px 7px; border-radius:50%; margin-left:5px; }
+.toast { position:fixed; left:50%; bottom:25px; transform:translate(-50%,30px); opacity:0; z-index:60; background:#fff; color:#c65d91; border:2px solid #f3bfd8; padding:11px 18px; border-radius:999px; box-shadow:0 10px 25px rgba(150,70,110,.18); transition:.3s; font:700 .85rem "Be Vietnam Pro",sans-serif; pointer-events:none; }
+.toast.show { opacity:1; transform:translate(-50%,0); }
+@media (max-width:700px){ .brand{flex-direction:column;gap:10px}.logo{width:105px}.cart-float{right:12px;bottom:12px}.filter-tabs button{font-size:.76rem;padding:8px 11px}.cute-illustration{height:180px} }
+
+/* ---------- FINAL MENU FORM / CLEAN GRID ---------- */
+.page-wrap{width:min(1180px,94%);grid-template-columns:minmax(0,1fr) 290px;gap:24px;align-items:start}
+.content{min-width:0}
+.menu-section{background:rgba(255,255,255,.58);border:1px solid #f6d7e5;border-radius:26px;padding:20px;margin-bottom:24px;box-shadow:0 10px 28px rgba(211,104,153,.07)}
+.menu-section h2{margin-top:0}
+.menu-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;align-items:stretch}
+.food-card{height:100%;display:flex;flex-direction:column;min-width:0}
+.food-card img,.cute-illustration{flex:0 0 auto;aspect-ratio:1.15/1;height:auto;min-height:175px;max-height:205px;object-fit:contain}
+.cute-illustration{font-size:4rem}
+.card-body{display:flex;flex-direction:column;flex:1}
+.food-card p{min-height:58px}
+.card-bottom{margin-top:auto;padding-top:8px}
+.section-heading-row{display:flex;align-items:end;justify-content:space-between;gap:14px;border-bottom:2px dashed #f0c8db;margin-bottom:16px;padding-bottom:8px}
+.section-heading-row h2{border:0;margin:0;padding:0}
+.section-note{font-size:.72rem;color:#b47791;text-align:right;max-width:270px}
+@media (min-width:1100px){.menu-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:900px){.page-wrap{grid-template-columns:1fr}.sidebar{position:static}.menu-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){.menu-grid{grid-template-columns:1fr}.menu-section{padding:15px}.section-heading-row{display:block}.section-note{display:block;text-align:left;margin-top:5px}.food-card img,.cute-illustration{min-height:170px}}
+
+/* FINAL FORM LAYOUT */
+.page-wrap{width:min(1180px,94%);grid-template-columns:minmax(0,1fr) 290px;gap:24px;align-items:start}
+.content{min-width:0}
+.menu-section{background:rgba(255,255,255,.62);border:1px solid #f6d7e5;border-radius:26px;padding:20px;margin-bottom:24px;box-shadow:0 10px 28px rgba(211,104,153,.07)}
+.menu-section#mon-dac-biet{grid-column:1;}
+.menu-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;align-items:stretch}
+.food-card{height:100%;display:flex;flex-direction:column;min-width:0}
+.food-card img,.cute-illustration{flex:0 0 auto;aspect-ratio:1.15/1;height:auto;min-height:175px;max-height:205px;object-fit:contain}
+.cute-illustration{font-size:4rem;position:relative;display:grid;place-items:center;grid-template-columns:auto auto auto;gap:5px;padding:18px}
+.cute-illustration span,.cute-illustration b,.cute-illustration i{font-style:normal;filter:drop-shadow(0 5px 5px rgba(200,80,135,.14))}
+.card-body{display:flex;flex-direction:column;flex:1}
+.food-card p{min-height:58px}
+.card-bottom{margin-top:auto;padding-top:8px}
+.section-heading-row{display:flex;align-items:end;justify-content:space-between;gap:14px;border-bottom:2px dashed #f0c8db;margin-bottom:16px;padding-bottom:8px}
+.section-heading-row h2{border:0;margin:0;padding:0}
+.section-note{font-size:.72rem;color:#b47791;text-align:right;max-width:270px}
+@media (max-width:900px){.page-wrap{grid-template-columns:1fr}.menu-section#mon-dac-biet{grid-column:auto}.menu-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.sidebar{position:static}}
+@media (max-width:620px){.menu-grid{grid-template-columns:1fr}.menu-section{padding:15px}.section-heading-row{display:block}.section-note{display:block;text-align:left;margin-top:5px}.food-card img,.cute-illustration{min-height:170px}}

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog cá nhân giới thiệu bản thân, kỹ năng, dự án và hành trình học tập của sinh viên.">
+    <meta name="author" content="Họ và tên sinh viên">
+    <title>Blog cá nhân | Họ và tên</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js" defer></script>
+</head>
+<body>
+    <div class="curtain-intro" id="curtainIntro" aria-hidden="true">
+        <div class="curtain-panel curtain-left"></div>
+        <div class="curtain-panel curtain-right"></div>
+        <div class="star-field" id="starField"></div>
+        <div class="curtain-title"><span>Q</span><small>một góc nhỏ của mình ♡</small></div>
+    </div>
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <div class="quick-tools" aria-label="Công cụ nhanh">
+        <button type="button" id="themeToggle" title="Đổi giao diện">☼</button>
+        <button type="button" id="fontToggle" title="Đổi cỡ chữ">A+</button>
+        <button type="button" id="sparkleToggle" title="Hiệu ứng lấp lánh">✦</button>
+    </div>
+    <div class="toast" id="toast" role="status"></div>
+    <header class="site-header" id="top">
+        <div class="container nav-wrap">
+            <a class="logo" href="#home" aria-label="Trang chủ">Q<span>♥</span></a>
+            <nav class="main-nav" aria-label="Điều hướng chính">
+                <a href="#home">Trang chủ</a>
+                <a href="#about">Giới thiệu</a>
+                <a href="#projects">Dự án</a>
+                <a href="#blog">Bài viết</a>
+                <a href="#contact">Liên hệ</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero section" id="home">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <p class="eyebrow">✦ BLOG CÁ NHÂN • SINH VIÊN</p>
+                    <h1>Xin chào!<br>Mình là <span>Lê Hồng Ngọc Quý</span>.</h1>
+                    <p class="hero-text">
+                        Một sinh viên yêu thích công nghệ, thiết kế giao diện và những điều nhỏ bé
+                        khiến cuộc sống trở nên thú vị hơn.
+                    </p>
+                    <div class="hero-buttons">
+                        <a class="btn btn-primary" href="#about">Xem hồ sơ ↗</a>
+                        <a class="btn btn-secondary" href="#contact">Liên hệ mình</a>
+                    </div>
+                    <div class="language-line">
+                        <span>Mình là</span>
+                        <strong class="typing-word">sinh viên</strong>
+                    </div>
+                </div>
+                <div class="hero-art">
+                    <div class="blob blob-one"></div>
+                    <div class="blob blob-two"></div>
+                    <div class="avatar-card">
+                        <div class="avatar-circle"><img src="../images/avatar.gif" alt="Ảnh đại diện"></div>
+                        <span class="mini-note">hello! ♡</span>
+                    </div>
+                    <div class="floating-card card-top">☕ học tập</div>
+                    <div class="floating-card card-bottom">✦ sáng tạo</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section soft-section" id="about">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">01 — ABOUT ME</p>
+                    <h2>Một chút về mình</h2>
+                </div>
+                <div class="about-grid">
+                    <div class="about-photo">
+                        <div class="photo-placeholder"><img src="../images/avatar.gif" alt="Ảnh của mình"></div>
+                    </div>
+                    <div class="about-copy">
+                        <p>
+                            Xin chào, mình là <strong>Hồng Ngọc Quý</strong>, hiện đang là sinh viên
+                            ngành <em>Công nghệ thông tin</em>. Mình thích tìm hiểu cách website
+                            được xây dựng và đặc biệt hứng thú với <mark>HTML, CSS và thiết kế UI</mark>.
+                        </p>
+                        <p>
+                            Ngoài việc học, mình thích <strong>cà phê, nghe nhạc, chụp ảnh</strong>
+                            và lưu lại những khoảnh khắc đời thường. Mục tiêu của mình là trở thành
+                            một người có thể kết hợp <em>công nghệ + thẩm mỹ + tư duy giải quyết vấn đề</em>
+                            để tạo ra những sản phẩm hữu ích.
+                        </p>
+                        <div class="facts">
+                            <div><span>🎓</span><b>Trường</b><small>Đại học của mình</small></div>
+                            <div><span>💻</span><b>Ngành</b><small>Công nghệ thông tin</small></div>
+                            <div><span>📍</span><b>Nơi sống</b><small>Việt Nam</small></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="skills">
+            <div class="container">
+                <div class="section-heading center">
+                    <p class="eyebrow">02 — SKILLS & TOOLS</p>
+                    <h2>Những thứ mình đang học</h2>
+                </div>
+                <div class="skill-grid">
+                    <span class="skill-tag">HTML5</span>
+                    <span class="skill-tag">CSS3</span>
+                    <span class="skill-tag">C / C++</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">Figma</span>
+                    <span class="skill-tag">UI Design</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">Canva</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section soft-section" id="projects">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">03 — PROJECTS</p>
+                    <h2>Dự án & hoạt động nổi bật</h2>
+                </div>
+                <div class="project-grid">
+                    <article class="project-card">
+                        <div class="project-image project-one"><img src="../images/project-web.jpg" alt="Dự án website"></div>
+                        <div class="project-body">
+                            <p class="project-number">PROJECT 01</p>
+                            <h3>Trang portfolio cá nhân</h3>
+                            <p>Thiết kế website giới thiệu bản thân bằng HTML và CSS3, tập trung vào bố cục rõ ràng và trải nghiệm dễ dùng.</p>
+                            <a href="#projects" class="project-open" data-title="Trang portfolio cá nhân" data-text="Một website cá nhân với bố cục mềm mại, ảnh đại diện và các phần giới thiệu, kỹ năng, dự án, blog và liên hệ.">Xem chi tiết →</a>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-image project-two"><img src="../images/project-ui.jpg" alt="Thiết kế giao diện UI"></div>
+                        <div class="project-body">
+                            <p class="project-number">PROJECT 02</p>
+                            <h3>Thiết kế giao diện trên Figma</h3>
+                            <p>Phác thảo wireframe và mockup cho một trang web sinh viên với hệ thống màu, typography và component đồng nhất.</p>
+                            <a href="#projects" class="project-open" data-title="Thiết kế giao diện trên Figma" data-text="Bộ giao diện tập trung vào màu pastel, typography dễ đọc và các component có tính nhất quán.">Xem chi tiết →</a>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-image project-three"><img src="../images/project-team.jpg" alt="Dự án nhóm"></div>
+                        <div class="project-body">
+                            <p class="project-number">PROJECT 03</p>
+                            <h3>Bài tập nhóm công nghệ</h3>
+                            <p>Phối hợp cùng các thành viên để phân chia công việc, hoàn thành sản phẩm và trình bày kết quả trước lớp.</p>
+                            <a href="#projects" class="project-open" data-title="Bài tập nhóm công nghệ" data-text="Một dự án nhóm giúp luyện kỹ năng phân chia công việc, phối hợp và trình bày sản phẩm trước lớp.">Xem chi tiết →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="journey">
+            <div class="container">
+                <div class="section-heading center">
+                    <p class="eyebrow">04 — MY JOURNEY</p>
+                    <h2>Hành trình của mình</h2>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-dot"></span>
+                        <p class="timeline-year">2022</p>
+                        <h3>Bắt đầu tìm hiểu công nghệ</h3>
+                        <p>Làm quen với tư duy lập trình và những dự án nhỏ đầu tiên.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-dot"></span>
+                        <p class="timeline-year">2024</p>
+                        <h3>Bước vào môi trường đại học</h3>
+                        <p>Học tập, làm bài nhóm và khám phá thêm nhiều lĩnh vực trong CNTT.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-dot"></span>
+                        <p class="timeline-year">2025</p>
+                        <h3>Quan tâm đến UI/UX</h3>
+                        <p>Bắt đầu học Figma, thiết kế bố cục và xây dựng website cá nhân.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-dot"></span>
+                        <p class="timeline-year">2026</p>
+                        <h3>Tiếp tục phát triển</h3>
+                        <p>Hoàn thiện kỹ năng web, xây dựng portfolio và thử sức với các dự án mới.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section soft-section" id="blog">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">05 — BLOG</p>
+                    <h2>Bài viết & chia sẻ</h2>
+                </div>
+                <div class="blog-layout">
+                    <div class="article-list">
+                        <article class="blog-post">
+                            <p class="post-meta">12.09.2026 • HỌC TẬP</p>
+                            <h3>Những điều mình học được khi làm website đầu tiên</h3>
+                            <p>Từ việc lên wireframe đến lúc viết từng dòng CSS, mình nhận ra thiết kế và lập trình luôn hỗ trợ cho nhau.</p>
+                            <a href="#contact">Đọc bài →</a>
+                        </article>
+                        <article class="blog-post">
+                            <p class="post-meta">05.09.2026 • CÔNG NGHỆ</p>
+                            <h3>Vì sao mình thích những giao diện tối giản?</h3>
+                            <p>Một giao diện tốt không cần quá nhiều chi tiết. Điều quan trọng là nội dung được ưu tiên và người dùng dễ tương tác.</p>
+                            <a href="#contact">Đọc bài →</a>
+                        </article>
+                    </div>
+                    <aside class="sidebar">
+                        <h3>Mạng xã hội</h3>
+                        <p>Mình thường chia sẻ quá trình học tập và những dự án nhỏ tại đây.</p>
+                        <a href="#" class="social-link">Facebook ↗</a>
+                        <a href="#" class="social-link">Instagram ↗</a>
+                        <a href="#" class="social-link">GitHub ↗</a>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <section class="section mini-apps" id="apps">
+            <div class="container">
+                <div class="section-heading center">
+                    <p class="eyebrow">06 — LITTLE APPS</p>
+                    <h2>Một góc nhỏ để nghịch</h2>
+                </div>
+                <div class="app-grid">
+                    <div class="app-card reveal">
+                        <span class="app-icon">✓</span>
+                        <h3>Checklist học tập</h3>
+                        <p>Đánh dấu những việc nhỏ cần hoàn thành hôm nay.</p>
+                        <div class="todo-list">
+                            <label><input type="checkbox" class="todo-check"> Làm bài HTML/CSS</label>
+                            <label><input type="checkbox" class="todo-check"> Ôn lại JavaScript</label>
+                            <label><input type="checkbox" class="todo-check"> Nghỉ ngơi một chút</label>
+                        </div>
+                    </div>
+                    <div class="app-card reveal">
+                        <span class="app-icon">⏱</span>
+                        <h3>Pomodoro mini</h3>
+                        <strong class="live-clock" id="pomodoroTime">25:00</strong>
+                        <p id="pomodoroStatus">Tập trung 25 phút rồi nghỉ nhé.</p>
+                        <div class="pomodoro-actions">
+                            <button class="app-btn" id="pomodoroBtn" type="button">Bắt đầu</button>
+                            <button class="app-btn ghost-btn" id="pomodoroReset" type="button">Đặt lại</button>
+                        </div>
+                    </div>
+                    <div class="app-card reveal">
+                        <span class="app-icon">⏰</span>
+                        <h3>Thời gian hiện tại</h3>
+                        <strong class="live-clock" id="liveClock">00:00:00</strong>
+                        <p id="liveDate">Hôm nay</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section contact-section" id="contact">
+            <div class="container contact-box">
+                <div>
+                    <p class="eyebrow">07 — CONTACT</p>
+                    <h2>Cùng kết nối nhé!</h2>
+                    <p>Nếu bạn muốn trao đổi về một dự án, bài học hoặc đơn giản là làm quen, hãy gửi mình một lời chào.</p>
+                </div>
+                <a class="btn btn-primary" href="mailto:emailcuaban@example.com">Gửi email ↗</a>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal" id="projectModal" aria-hidden="true">
+        <div class="modal-backdrop" data-close-modal></div>
+        <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <button class="modal-close" type="button" data-close-modal aria-label="Đóng">×</button>
+            <p class="eyebrow">PROJECT PREVIEW</p>
+            <h2 id="modalTitle">Dự án</h2>
+            <p id="modalText">Thông tin dự án.</p>
+            <span class="modal-chip">HTML • CSS • UI</span>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div><a class="logo footer-logo" href="#top">Q<span>♥</span></a><p>Made with ♡ & CSS3.</p></div>
+            <div class="footer-socials">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">GitHub</a>
+            </div>
+            <div class="footer-right">
+                <p>© 2026 Hồng Ngọc Quý</p>
+                <a class="back-top" href="#top">↑ Về đầu trang</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
